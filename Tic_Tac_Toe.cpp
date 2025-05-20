@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-char board[3][3]={{'-','-','-'},{'-','-','-'},{'-','-','-'}};
+char board[3][3]={{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}};
 int choice;
 char turn = 'X';
 int row,column;
@@ -18,6 +18,7 @@ void Display_board()
     cout<<"                 Player 01: [X]"<<endl;
     cout<<"                 Player 02: [Y]"<<endl;
     cout<<endl<<endl;
+    cout<<"     Enter the no where you want to enter your choice:\n";
 
     cout<<"        _________________________________\n";
     cout<<"       | _________  _________  _________ |\n";
@@ -115,15 +116,15 @@ bool Game_Over()
 {
     for(int i=0;i<3;i++)
     {
-        if((board[i][0] == board[i][1] && board[i][0] == board[i][2]&& board[i][0] !='-')||
-           (board[0][i] == board[1][i] && board[0][i] == board[2][i]&& board[i][0] !='-'))
+        if((board[i][0] == board[i][1] && board[i][0] == board[i][2]&& board[i][0] !=' ')||
+           (board[0][i] == board[1][i] && board[0][i] == board[2][i]&& board[0][i] !=' '))
            {
              return true;
            }
     }
 
-    if((board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] !='-') || 
-       (board[0][2] == board[1][1] && board[0][2] == board[2][0] && board[0][2] !='-'))
+    if((board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] !=' ') || 
+       (board[0][2] == board[1][1] && board[0][2] == board[2][0] && board[0][2] !=' '))
        {
         return true;
        }
